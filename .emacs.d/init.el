@@ -121,7 +121,7 @@
 ;(require 'go-autocomplete)
 ;(require 'auto-complete-config)
 
-(global-auto-complete-mode t)
+;(global-auto-complete-mode t)
 
 ;(require 'site-gentoo)
 
