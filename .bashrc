@@ -7,19 +7,20 @@ case $TERM in
 		;;
 esac
 
-# activate bash-completion:
+# activate bash-completion: (Gentoo specific)
 [ -f /etc/profile.d/bash-completion.sh ] && source /etc/profile.d/bash-completion.sh
 
 export PS1="\[\033[1;31m\]\u\[\033[1;33m\]@\[\033[1;34m\]\h \[\033[1;36m\]\W\[\033[1;0m\] $ "
 
 # commands starting with space should be recorded to history! Nice for passwords.
+# Also ignore duplicate entries
 export HISTCONTROL=ignorespace
+export HISTCONTROL=ignoredups
+export HISTSIZE=10000
 
 # Go path
 export PATH="${PATH}:/home/mrsaccess/go/bin"
 export GOPATH=/home/mrsaccess/go
-
-export HISTSIZE=10000
 
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias glnc="git log --pretty=format:'%h -%d %s (%cr) <%an>' --abbrev-commit"
