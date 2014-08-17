@@ -25,4 +25,7 @@ export GOPATH=/home/mrsaccess/go
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias glnc="git log --pretty=format:'%h -%d %s (%cr) <%an>' --abbrev-commit"
 
-alias pythonserver="python -m SimpleHTTPServer || python -m http.server"
+pythonserver()
+{
+    python -m SimpleHTTPServer $1 || python -m http.server $1
+}
