@@ -14,8 +14,7 @@ export PS1="\[\033[1;31m\]\u\[\033[1;33m\]@\[\033[1;34m\]\h \[\033[1;36m\]\W\[\0
 
 # commands starting with space should be recorded to history! Nice for passwords.
 # Also ignore duplicate entries
-export HISTCONTROL=ignorespace
-export HISTCONTROL=ignoredups
+export HISTCONTROL=ignorespace:ignoredups
 export HISTSIZE=10000
 
 # Go path
