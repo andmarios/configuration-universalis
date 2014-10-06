@@ -131,3 +131,6 @@
 ;(setq org-log-done t)
 
 ;(load "yaml-mode.el")
+
+;; Associate tmpl (golang's templates) with web mode:
+(add-to-list 'auto-mode-alist '("\\.tmpl\\'" . web-mode))
