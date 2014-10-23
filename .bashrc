@@ -28,3 +28,7 @@ pythonserver()
 {
     python -m SimpleHTTPServer $1 || python -m http.server $1
 }
+
+# Set git variables
+git config --global user.name "Marios Andreopoulos"
+git config --global user.email opensource@andmarios.com
