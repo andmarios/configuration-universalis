@@ -32,3 +32,4 @@ pythonserver()
 # Set git variables
 git config --global user.name "Marios Andreopoulos"
 git config --global user.email opensource@andmarios.com
+git config --global core.editor nano
