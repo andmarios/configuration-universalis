@@ -21,9 +21,11 @@ export HISTSIZE=10000
 export PATH="${PATH}:/home/mrsaccess/go/bin"
 export GOPATH=/home/mrsaccess/go
 
+# Useful and nice git logs
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias glnc="git log --pretty=format:'%h -%d %s (%cr) <%an>' --abbrev-commit"
 
+# Python http server working with both 2.7 and 3.x
 pythonserver()
 {
     python -m SimpleHTTPServer $1 || python -m http.server $1
@@ -33,3 +35,14 @@ pythonserver()
 git config --global user.name "Marios Andreopoulos"
 git config --global user.email opensource@andmarios.com
 git config --global core.editor nano
+
+# Replace container IDs with container IPs for docker ps.
+dockip()
+{
+    docker ps | while read DLINE
+                do
+                    CONTAINER="$(echo $DLINE | grep -Eo "^[a-f0-9]{12,12}")"
+                    [[ ! -z "$CONTAINER" ]]  && CIP="$(docker inspect $CONTAINER | grep IPAd | cut -d \" -f 4)"
+                    echo "$DLINE" | sed -e "s/[a-f0-9]\{12,12\}/$CIP/"
+                done
+}
