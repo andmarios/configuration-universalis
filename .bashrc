@@ -18,8 +18,8 @@ export HISTCONTROL=ignorespace:ignoredups
 export HISTSIZE=10000
 
 # Go path
-export PATH="${PATH}:/home/mrsaccess/go/bin"
-export GOPATH=/home/mrsaccess/go
+export PATH="${PATH}:${HOME}/go/bin"
+export GOPATH=${HOME}/go
 
 # Useful and nice git logs
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
