@@ -47,6 +47,9 @@ dockip()
                 done
 }
 
+# Some generic aliases tailored to our needs
+alias memusage='ps axo rss,pmem,pid,user,command | awk '"'"'{ hr=$1/1024 ; printf("%13.6f Mb ",hr) } { for ( x=4 ; x<=NF ; x++ ) { printf("%s ",$x) } print "" }'"'"' | sort -n'
+
 # Some personal aliases
 ## Find easily process
 alias mps="ps aux | grep -i"
