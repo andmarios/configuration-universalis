@@ -46,3 +46,10 @@ dockip()
                     echo "$DLINE" | sed -e "s/[a-f0-9]\{12,12\}/$CIP/"
                 done
 }
+
+# Some personal aliases
+## Find easily process
+alias mps="ps aux | grep -i"
+## Find easily ports
+alias mnstat="netstat -p -l -n | grep -i"
+
