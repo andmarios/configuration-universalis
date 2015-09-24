@@ -24,6 +24,8 @@ export GOPATH=${HOME}/go
 # Useful and nice git logs
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias glnc="git log --pretty=format:'%h -%d %s (%cr) <%an>' --abbrev-commit"
+# Quick go coverage
+alias gocover="go test -cover -covermode=set -coverprofile=coverage.out && go tool cover -html=coverage.out; rm coverage.out"
 
 # Python http server working with both 2.7 and 3.x
 pythonserver()
