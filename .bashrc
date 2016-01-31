@@ -41,12 +41,12 @@ git config --global core.editor nano
 # Replace container IDs with container IPs for docker ps.
 dockip()
 {
-    docker ps | while read DLINE
-                do
-                    CONTAINER="$(echo $DLINE | grep -Eo "^[a-f0-9]{12,12}")"
-                    [[ ! -z "$CONTAINER" ]]  && CIP="$(docker inspect $CONTAINER | grep IPAd | cut -d \" -f 4)"
-                    echo "$DLINE" | sed -e "s/[a-f0-9]\{12,12\}/$CIP/"
-                done
+	docker ps | while read DLINE
+	do
+		CONTAINER="$(echo $DLINE | grep -Eo "^[a-f0-9]{12,12}")"
+		[[ ! -z "$CONTAINER" ]]  && CIP="$(docker inspect $CONTAINER | grep IPAd | grep -m 1 172 | cut -d \" -f 4)"
+		echo "$DLINE" | sed -e "s/[a-f0-9]\{12,12\}/$CIP/"
+	done
 }
 
 # Some generic aliases tailored to our needs
