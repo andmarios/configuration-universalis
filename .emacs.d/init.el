@@ -56,6 +56,9 @@
  '(vertical-border ((t nil)))
 )
 
+;; m-q -> fill column, m-1 m-q -> block fill
+(setq-default fill-column 80)
+
 ;; ------------
 ;; -- Macros --
 ;; ------------
